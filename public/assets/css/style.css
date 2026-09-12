@@ -1,0 +1,184 @@
+/* ==========================================================================
+   企業報價單管理系統 - 自定義增強樣式表 (assets/css/style.css)
+   完全配合 Bootstrap 5 與 Font Awesome 本機端樣式庫
+   ========================================================================== */
+
+:root {
+  --primary-color: #1e3a8a;
+  --primary-hover: #1e40af;
+  --secondary-color: #0f766e;
+  --accent-color: #d97706;
+  --border-subtle: #e2e8f0;
+  --bg-subtle: #f8fafc;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+  color: #1e293b;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* 確保全域無非預期橫向捲軸 */
+html, body {
+  max-width: 100%;
+}
+
+/* 導覽列與 LOGO 樣式 */
+.navbar-brand {
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.brand-logo-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+/* 導覽列連結互動動態 */
+.nav-pills .nav-link {
+  color: #475569;
+  font-weight: 500;
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-pills .nav-link:hover {
+  color: #1e3a8a;
+  background-color: #f1f5f9;
+}
+
+.nav-pills .nav-link.active {
+  color: #ffffff;
+  background-color: #1e3a8a;
+  box-shadow: 0 2px 4px rgba(30, 58, 138, 0.2);
+}
+
+/* 卡片與容器陰影 */
+.card {
+  border-color: #e2e8f0;
+  border-radius: 10px;
+}
+
+.card-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #f1f5f9;
+  font-weight: 600;
+}
+
+/* 數據概覽指標卡片 */
+.stat-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-left: 4px solid transparent;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+}
+
+.stat-card.stat-cust { border-left-color: #2563eb; }
+.stat-card.stat-vend { border-left-color: #0d9488; }
+.stat-card.stat-prod { border-left-color: #d97706; }
+.stat-card.stat-quo  { border-left-color: #7c3aed; }
+
+/* 必填欄位星號紅點 */
+.required-star {
+  color: #dc3545;
+  margin-left: 2px;
+}
+
+/* 響應式表格強化 */
+.table th {
+  background-color: #f8fafc;
+  color: #475569;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.table td {
+  vertical-align: middle;
+  font-size: 0.9rem;
+}
+
+/* 代碼專用 Badge */
+.code-badge {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+}
+
+/* 報價單多品項表格 */
+.quote-item-row {
+  transition: background-color 0.15s ease;
+}
+
+.quote-item-row:hover {
+  background-color: #f8fafc;
+}
+
+/* 觸控目標尺寸確保 (RWD 行動裝置 ≥ 44px) */
+@media (max-width: 575.98px) {
+  .btn-touch {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .table-responsive {
+    border: 0;
+  }
+}
+
+/* 唯讀輸入框背景 */
+.form-control:disabled,
+.form-control[readonly] {
+  background-color: #f1f5f9;
+  cursor: not-allowed;
+}
+
+/* 報價單列印樣式優化 */
+@media print {
+  body {
+    background-color: #ffffff !important;
+  }
+  .navbar,
+  .main-nav-tabs,
+  .btn-toolbar-print,
+  .modal-footer,
+  .no-print {
+    display: none !important;
+  }
+  .modal {
+    position: static;
+    overflow: visible;
+  }
+  .modal-dialog {
+    max-width: 100% !important;
+    margin: 0;
+  }
+  .modal-content {
+    border: none;
+    box-shadow: none;
+  }
+  .print-area {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}

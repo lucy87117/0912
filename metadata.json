@@ -1,0 +1,6 @@
+{
+  "name": "企業報價單管理系統",
+  "description": "純原生 HTML/CSS/JS + Bootstrap 5 + Font Awesome 打造之響應式報價單管理系統，支援客戶管理、廠商管理、產品管理與多品項報價單管理，具備完整 RWD 與表單防呆機制。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
